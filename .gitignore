@@ -1,0 +1,9 @@
+# Python 虚拟环境（本地才有，不上传）
+.venv/
+
+# VS Code 个人配置
+.vscode/
+
+# Python 运行产生的缓存
+__pycache__/
+*.pyc
