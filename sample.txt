@@ -1,0 +1,9 @@
+Large language models changed how we build software. A language model does not know your data. It only knows what it was trained on. To make a model answer questions about your own documents, you need retrieval augmented generation, or RAG.
+
+RAG works in three steps. First, documents are split into small chunks. Second, every chunk is turned into a vector by an embedding model. Third, when a user asks a question, the question is also turned into a vector, and the system searches for the chunks that are closest to it. The model then reads those chunks and writes an answer.
+
+The hard part is not the demo. The hard part is quality. A naive RAG system answers with an accuracy of about sixty percent. The same system with better chunking, reranking and evaluation can reach eighty eight percent. The difference is engineering work, not a new model.
+
+Most tutorials stop at the demo. They show you a system that answers one question well and fails on the next ten. Real users ask messy questions. They ask about a document you never indexed, or they ask a question that needs three chunks at once. If your system only returns the top chunk, it will miss the answer.
+
+So the work is this. Measure first. Build a small test set of questions and expected answers. Run your system on it. Look at what fails. Then fix one thing at a time. Better chunking. A reranker. A prompt that forces the model to cite the source. Each change should move the number, and if it does not move the number, you learned something too.
